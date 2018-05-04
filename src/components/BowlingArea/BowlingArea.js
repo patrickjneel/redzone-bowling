@@ -25,14 +25,16 @@ class BowlingArea extends Component {
       <div className="bowling-area">
         <ScoreBoard />
         <div className="bowling-score-area">
-          <input placeholder="Player 1 Enter Name"/>
-          <button>
-            Submit Name
-          </button>
-          <input placeholder="Roll Away!!"/>
-          <button onClick={this.submitScore}>
-            Submit Score
-          </button>
+          <div className="input-and-btn-area">
+            <input placeholder="Player 1 Enter Name"/>
+            <button>
+              Submit Name
+            </button>
+            <input placeholder="Roll Away!!"/>
+            <button onClick={this.submitScore}>
+              Submit Score
+            </button>
+          </div>
         </div>
       </div>
     )

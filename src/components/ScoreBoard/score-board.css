@@ -2,13 +2,15 @@
   align-items: center;
   display: flex;
   justify-content: center;
+  width: 70%;
 }
 
 .score-board {
   background-color: white;
   border: 5px solid #d13239;
   box-shadow: 0px 1px 1px 1px #c5c5c5;
-  width: 80%;
+  margin-top: 25px;
+  width: 100%;
 }
 
 .name {

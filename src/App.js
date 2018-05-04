@@ -7,7 +7,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img className="logo-img" src={require('./redzone.png')} />
+          <img className="logo-img" src={require('./redzone.png')} alt="redzone-logo"/>
           <h1 className="App-title">BOWLING</h1>
         </header>
         <BowlingArea />
