@@ -14,11 +14,14 @@
 }
 
 .App-title {
-  color: #d13239;
+  color: white;
   font-family: 'Roboto', sans-serif;;
   font-size: 50px;
   margin: unset;
   padding-top: 7px;
+}
 
+.logo-img {
+  width: 385px;
 }
 

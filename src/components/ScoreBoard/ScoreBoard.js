@@ -64,20 +64,6 @@ const ScoreBoard = () => {
             </td>
             <td className="player-total">300</td>
           </tr>
-          <tr>
-            <td className="player-name">Maisie</td>
-            <td className="player-score">8</td>
-            <td className="player-score">8</td>
-            <td className="player-score">8</td>
-            <td className="player-score">8</td>
-            <td className="player-score">8</td>
-            <td className="player-score">8</td>
-            <td className="player-score">8</td>
-            <td className="player-score">8</td>
-            <td className="player-score">8</td>
-            <td className="player-score">8</td>
-            <td className="player-total">300</td>
-          </tr>
         </tbody>
       </table>
     </div>
