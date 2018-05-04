@@ -22,16 +22,46 @@ const ScoreBoard = () => {
           </tr>
           <tr>
             <td className="player-name">Norman</td>
-            <td className="player-score">8</td>
-            <td className="player-score">8</td>
-            <td className="player-score">8</td>
-            <td className="player-score">8</td>
-            <td className="player-score">8</td>
-            <td className="player-score">8</td>
-            <td className="player-score">8</td>
-            <td className="player-score">8</td>
-            <td className="player-score">8</td>
-            <td className="player-score">8</td>
+            <td className="player-score">
+             <span className="frame-score">8</span>
+             <span className="frame-score">2</span>
+            </td>
+            <td className="player-score">
+             <span className="frame-score">7</span>
+             <span className="frame-score">0</span>
+            </td>
+            <td className="player-score">
+             <span className="frame-score">8</span>
+             <span className="frame-score">2</span>
+            </td>
+            <td className="player-score">
+             <span className="frame-score">0</span>
+             <span className="frame-score">7</span>
+            </td>
+            <td className="player-score">
+             <span className="frame-score">8</span>
+             <span className="frame-score">2</span>
+            </td>
+            <td className="player-score">
+             <span className="frame-score">6</span>
+             <span className="frame-score">2</span>
+            </td>
+            <td className="player-score">
+             <span className="frame-score">0</span>
+             <span className="frame-score">0</span>
+            </td>
+            <td className="player-score">
+             <span className="frame-score">10</span>
+             <span className="frame-score">0</span>
+            </td>
+            <td className="player-score">
+             <span className="frame-score">5</span>
+             <span className="frame-score">5</span>
+            </td>
+            <td className="player-score">
+             <span className="frame-score">4</span>
+             <span className="frame-score">2</span>
+            </td>
             <td className="player-total">300</td>
           </tr>
           <tr>
