@@ -1,0 +1,43 @@
+.score-board-area {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.score-board {
+  border: 5px solid #d13239;
+  width: 80%;
+}
+
+.name {
+  border: 1px solid black;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.player-name {
+  border: 1px solid black;
+  font-size: 28px;
+}
+
+.frames {
+  background-color: #9abced;
+  border-radius: 25px;
+  font-weight: 800;
+  height: 45px;
+  padding: 3px;
+  width: 45px;
+}
+
+.totals {
+  border: 1px solid black;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.player-total {
+  border: 1px solid black;
+  font-size: 28px;
+}
+
+
