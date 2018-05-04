@@ -20,6 +20,10 @@
   font-size: 28px;
 }
 
+.player-score {
+  border: 1px solid red;
+}
+
 .frames {
   background-color: #9abced;
   border-radius: 25px;
