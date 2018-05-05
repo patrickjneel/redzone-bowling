@@ -22,7 +22,9 @@ class BowlingArea extends Component {
 
   addScore = (event) => {
     const scoreArr = [...this.state.scoreArr, this.state.playerScore]
+    console.log(scoreArr)
     this.setState({ scoreArr })
+    // console.log(this.state.playerScore)
     this.setState({ playerScore: ''}) 
   }
 
@@ -52,6 +54,7 @@ class BowlingArea extends Component {
             <button onClick={this.addScore}>
               Submit Score
             </button>
+            
           </div>
         </div>
       </div>

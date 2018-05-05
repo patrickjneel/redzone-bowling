@@ -2,13 +2,6 @@ import React from 'react';
 import './score-board.css';
 
 const ScoreBoard = ({ name, scoreArray }) => {
-     console.log(scoreArray)
-    //  if(!scoreArray.length) {
-    //     return <td className="player-total">0</td>
-    //  } else {
-    // const scoreTotal = scoreArray.reduce((a,b) => parseInt(a) + parseInt(b));
-    // console.log(scoreTotal) 
-    //  }
             
   return (
     <div className="score-board-area">
