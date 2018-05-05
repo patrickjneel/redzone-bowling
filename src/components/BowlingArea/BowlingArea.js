@@ -13,16 +13,17 @@ class BowlingArea extends Component {
   }
 
   handleInput = (event) => {
-   this.setState({
-      playerName: event.target.value,
-    });
+   this.setState({ playerName: event.target.value });
+  };
+
+  handleScore = (event) => {
+    this.setState({ playerScore: event.target.value });
   };
 
   addScore = (event) => {
-    console.log('hi')
-    const scores = event.target.value
-    const scoreArr = [...this.state.scoreArr, scores]
+    const scoreArr = [...this.state.scoreArr, this.state.playerScore]
     this.setState({ scoreArr })
+    this.setState({ playerScore: ''}) 
   }
 
   render() {
@@ -45,7 +46,7 @@ class BowlingArea extends Component {
               className="player-inputs"
               placeholder="Roll Away!!"
               value={this.state.playerScore}
-              onChange={this.playerScore}
+              onChange={this.handleScore}
               maxLength={2}
             />
             <button onClick={this.addScore}>
