@@ -2,7 +2,15 @@ import React from 'react';
 import './score-board.css';
 
 const ScoreBoard = ({ name, scoreArray }) => {
-            
+
+    // let finalScore;
+    // if(!scoreArray.length || scoreArray.length === 20){
+    //    <td className="player-total">0</td>
+    // } else {
+    //     finalScore = scoreArray.reduce((a,b) => a + b);
+    // }
+
+
   return (
     <div className="score-board-area">
       <table className="score-board">
@@ -19,7 +27,7 @@ const ScoreBoard = ({ name, scoreArray }) => {
             <th className="frames">8</th>
             <th className="frames">9</th>
             <th className="frames">10</th>
-            <th className="totals">Total</th>
+            <th className="totals">Total Score</th>
           </tr>
           <tr>
             <td className="player-name">{name}</td>
@@ -62,8 +70,9 @@ const ScoreBoard = ({ name, scoreArray }) => {
             <td className="player-score">
              <span className="frame-score">{scoreArray[18]}</span>
              <span className="frame-score">{scoreArray[19]}</span>
+             <span className="frame-score">{scoreArray[20]}</span>
             </td>
-            <td className="player-total">300</td>
+            <td className="player-total">0</td>
           </tr>
         </tbody>
       </table>
