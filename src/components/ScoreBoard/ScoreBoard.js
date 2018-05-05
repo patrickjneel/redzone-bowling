@@ -3,12 +3,14 @@ import './score-board.css';
 
 const ScoreBoard = ({ name, scoreArray }) => {
 
-    // let finalScore;
-    // if(!scoreArray.length || scoreArray.length === 20){
-    //    <td className="player-total">0</td>
-    // } else {
-    //     finalScore = scoreArray.reduce((a,b) => a + b);
-    // }
+    let finalScore;
+    if(!scoreArray.length || scoreArray.length === 20){
+       <td className="player-total">0</td>
+    } else {
+        finalScore = scoreArray.reduce((a,b) => parseInt(a) + parseInt(b));
+    }
+
+    console.log(finalScore)
 
 
   return (
@@ -72,7 +74,7 @@ const ScoreBoard = ({ name, scoreArray }) => {
              <span className="frame-score">{scoreArray[19]}</span>
              <span className="frame-score">{scoreArray[20]}</span>
             </td>
-            <td className="player-total">0</td>
+            <td className="player-total">{finalScore}</td>
           </tr>
         </tbody>
       </table>
