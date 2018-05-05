@@ -1,7 +1,8 @@
 import React from 'react';
 import './score-board.css';
 
-const ScoreBoard = () => {
+const ScoreBoard = ({ name }) => {
+    
   return (
     <div className="score-board-area">
       <table className="score-board">
@@ -21,7 +22,7 @@ const ScoreBoard = () => {
             <th className="totals">Total</th>
           </tr>
           <tr>
-            <td className="player-name">Norman</td>
+            <td className="player-name">{name}</td>
             <td className="player-score">
              <span className="frame-score">8</span>
              <span className="frame-score">2</span>
