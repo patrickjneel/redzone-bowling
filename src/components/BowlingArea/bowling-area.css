@@ -21,3 +21,22 @@
   padding-bottom: 30px;
   width: 100%;
 }
+
+.player-inputs {
+  font-size: 24px;
+  height: 25px;
+  margin-right: 20px;
+  margin-top: 38px;
+  width: 210px;
+}
+
+button {
+  background: radial-gradient(circle at 50% 0px, #ffffff, rgba(255, 255, 255, 0) 58%);
+  background: black;
+  border-radius: 50%;
+  color: white;
+  height: 110px;
+  width: 110px;
+  /*transform: translateX(68px) translateY(-60px) skewX(15deg) skewY(2deg);*/
+  /*position: absolute;*/
+}

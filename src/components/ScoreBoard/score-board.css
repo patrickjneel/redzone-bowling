@@ -9,6 +9,7 @@
   background-color: white;
   border: 5px solid #d13239;
   box-shadow: 0px 1px 1px 1px #c5c5c5;
+  height: 125px;
   margin-top: 25px;
   width: 100%;
 }
@@ -22,6 +23,7 @@
 .player-name {
   border: 1px solid black;
   font-size: 28px;
+  width: 225px;
 }
 
 .player-score {
