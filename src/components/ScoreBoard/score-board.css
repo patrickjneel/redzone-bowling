@@ -22,6 +22,7 @@
 .player-name {
   border: 1px solid black;
   font-size: 28px;
+  width: 225px;
 }
 
 .player-score {

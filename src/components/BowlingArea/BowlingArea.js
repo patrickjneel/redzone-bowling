@@ -7,46 +7,48 @@ class BowlingArea extends Component {
     super()
     this.state = {
       playerName: '',
+      playerScore: '',
       scoreArr: []
     }
   }
 
   handleInput = (event) => {
    this.setState({
-      playerName: event.target.value
+      playerName: event.target.value,
     });
   };
 
-  submitScore = (event) => {
-    // if(typeof event.target.value !== 'number' ) {
-    //   return (
-    //     <div>Pleae enter a number</div>
-    //   )
-    // }
-    this.state.scoreArr.push(event.target.value)
-    // this.setState({ scoreArr: scores })
+  addScore = (event) => {
+    console.log('hi')
+    const scores = event.target.value
+    const scoreArr = [...this.state.scoreArr, scores]
+    this.setState({ scoreArr })
   }
 
   render() {
-    console.log(this.state.scoreArr)
     return (
       <div className="bowling-area">
-        <ScoreBoard name={this.state.playerName}/>
+        <ScoreBoard 
+          name={this.state.playerName}
+          scoreArray={this.state.scoreArr}
+        />
         <div className="bowling-score-area">
           <div className="input-and-btn-area">
             <input 
               className="player-inputs"
-              placeholder="Player 1 Enter Name"
+              placeholder="Enter Player Name"
               value={this.state.playerName}
               onChange={this.handleInput}
+              maxLength={8}
             />
             <input 
               className="player-inputs"
               placeholder="Roll Away!!"
-              value={this.state.scoreArr}
-              onChange={this.submitScore}
+              value={this.state.playerScore}
+              onChange={this.playerScore}
+              maxLength={2}
             />
-            <button onClick={this.submitScore}>
+            <button onClick={this.addScore}>
               Submit Score
             </button>
           </div>
