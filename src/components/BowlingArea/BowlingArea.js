@@ -70,7 +70,11 @@ class BowlingArea extends Component {
             />
             <button 
               onClick={this.addScore}
-              disabled={this.state.playerScore > 10 || this.state.playerScore < 0}
+              disabled={
+                this.state.playerScore > 10 || 
+                this.state.playerScore < 0 ||
+                this.state.playerScore === '' 
+              }
             >
               Submit Score
             </button>
