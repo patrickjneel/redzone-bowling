@@ -18,6 +18,10 @@ class BowlingArea extends Component {
   }
 
   addScore = (event) => {
+      console.log(event.target.value)
+    if(event.target.value > 10) {
+      return alert('Please enter a value between 0-10')
+    }
     const scoreArr = [...this.state.scoreArr, this.state.playerScore];
     this.setState({ scoreArr });
     this.setState({ playerScore: ''});
@@ -44,6 +48,9 @@ class BowlingArea extends Component {
           this.gameOver()
         }
         <div className="bowling-score-area">
+        <div className="rules">
+          Enter a Number 0-10 button is disabled if a number over 10 input or less than 0
+          </div>
           <div className="input-and-btn-area">
             <input 
               className="player-inputs"
@@ -61,7 +68,10 @@ class BowlingArea extends Component {
               maxLength={2}
               name="playerScore"
             />
-            <button onClick={this.addScore}>
+            <button 
+              onClick={this.addScore}
+              disabled={this.state.playerScore > 10 || this.state.playerScore < 0}
+            >
               Submit Score
             </button>
           </div>
