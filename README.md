@@ -12,3 +12,9 @@
 
     ```npm start```
 
+4. Run Test suite
+    
+    ```npm test```
+
+![screenshot](./src/assets/screenshot.jpg)
+
