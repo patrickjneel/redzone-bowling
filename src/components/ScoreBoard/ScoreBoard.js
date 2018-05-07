@@ -10,7 +10,12 @@ const ScoreBoard = ({ scoreArray }) => {
     finalScore = scoreArray.reduce((a,b) => parseInt(a) + parseInt(b));
   }
 
-  const variable = "jo"; //filter for 10 and zeros goes here
+  // const replaceTen = scoreArray.filter(nums => {
+  //   console.log(nums)
+  //   if (nums === '10') {
+  //     return scoreArray.nums.replace(/10/g, 'X');
+  //   }
+  // })
 
   return (
     <div className="score-board-area">
@@ -33,7 +38,7 @@ const ScoreBoard = ({ scoreArray }) => {
           <tr>
             <td className="player-name" contentEditable>Enter Name</td>
             <td className="player-score">
-              <span className={`frame-score ${variable}`}>{scoreArray[0]}</span>
+              <span className="frame-score">{scoreArray[0]}</span>
               <span className="frame-score">{scoreArray[1]}</span>
             </td>
             <td className="player-score">

@@ -39,10 +39,11 @@ class BowlingArea extends Component {
 
    return this.state.remaningPins.map(number => {
         return (
-            <button 
+          <button 
             className="score-btn" 
             onClick={this.addScore}
-            value={number}>{number}</button>
+            value={number}>{number}
+          </button>
         )
       })
 
