@@ -7,8 +7,9 @@ class BowlingArea extends Component {
     super()
     this.state = {
       initialPins: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 
-      remaningPins: [],
+      remainingPins: [],
       scoreArr: [],
+      frameTotal: [],
       scoreObj: {
         10: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
         9: [0, 1],
@@ -26,10 +27,11 @@ class BowlingArea extends Component {
   }
 
   showScores = () => {
-    if(!this.state.remaningPins.length) {
+    if(!this.state.remainingPins.length) {
       return this.state.initialPins.map(number => {
         return (
-            <button 
+            <button
+            key={number}
             className="score-btn" 
             onClick={this.addScore}
             value={number}>{number}</button>
@@ -37,12 +39,14 @@ class BowlingArea extends Component {
       })  
     } 
 
-   return this.state.remaningPins.map(number => {
+   return this.state.remainingPins.map(number => {
         return (
-            <button 
+          <button
+            key={number}
             className="score-btn" 
             onClick={this.addScore}
-            value={number}>{number}</button>
+            value={number}>{number}
+          </button>
         )
       })
 
@@ -56,36 +60,37 @@ class BowlingArea extends Component {
 
     if(arrLength < 20){
       arrLength % 2 === 0 
-      ? this.completeTurn(event)
-      : this.setState({ scoreArr, remaningPins: [] });
+      ? this.setState({ scoreArr, remainingPins: this.state.scoreObj[value] })
+      : this.setState({ scoreArr, remainingPins: [] });
     }
   }
 
-  completeTurn = (event) => {
-    const {value} = event.target;
-    const scoreArr = [...this.state.scoreArr, value];
-    const arrLength = this.state.scoreArr.length;
-    this.setState({ scoreArr, remaningPins: this.state.scoreObj[value] })
-    //if {
-        //setState({[...scorArr, 0], remaningPins: [] })
-      //}
+  gameOver = () => {
+    if(this.state.scoreArr.length === 20) {
+      return (
+        <div className="gameOver">
+          <h4 className="message">
+            Game Over Your final Score was  {this.state.scoreArr.reduce((a,b) => parseInt(a) + parseInt(b))}
+          </h4>
+        </div>
+      )
+    }
   }
-
 
   render() {
     return (
       <div className="bowling-area">
-
-          <div className="button-container">
-            {this.showScores()}
-          </div>
-
+        <div className="button-container">
+          {this.showScores()}
+        </div>
+        {this.gameOver()}
         <ScoreBoard 
           scoreArray={this.state.scoreArr}
+          frameTotal={this.state.frameTotal}
         />
       </div>
-    )
-  }
-}
+    );
+  };
+};
 
 export default BowlingArea;
