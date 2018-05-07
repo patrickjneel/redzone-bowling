@@ -72,21 +72,31 @@ class BowlingArea extends Component {
       //}
   }
 
+  gameOver = () => {
+    if(this.state.scoreArr.length === 20) {
+      return (
+        <div className="gameOver">
+          <h4 className="message">
+            Game Over Your final Score was  {this.state.scoreArr.reduce((a,b) => parseInt(a) + parseInt(b))}
+          </h4>
+        </div>
+      )
+    }
+  }
 
   render() {
     return (
       <div className="bowling-area">
-
-          <div className="button-container">
-            {this.showScores()}
-          </div>
-
+        <div className="button-container">
+          {this.showScores()}
+        </div>
+        {this.gameOver()}
         <ScoreBoard 
           scoreArray={this.state.scoreArr}
         />
       </div>
-    )
-  }
-}
+    );
+  };
+};
 
 export default BowlingArea;
