@@ -6,57 +6,88 @@ class BowlingArea extends Component {
   constructor() {
     super()
     this.state = {
-      playerName: '',
-      playerScore: '',
-      scoreArr: []
+      initialPins: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 
+      remaningPins: [],
+      scoreArr: [],
+      scoreObj: {
+        10: [0],
+        9: [0, 1],
+        8: [0, 1, 2],
+        7: [0, 1, 2, 3],
+        6: [0, 1, 2, 3, 4],
+        5: [0, 1, 2, 3, 4, 5],
+        4: [0, 1, 2, 3, 4, 5, 6],
+        3: [0, 1, 2, 3, 4, 5, 6, 7],
+        2: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+        1: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+        0: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 
+      }
     }
   }
 
-  handleInput = (event) => {
-   this.setState({ playerName: event.target.value });
-  };
-
-  handleScore = (event) => {
-    this.setState({ playerScore: event.target.value });
-  };
-
-  addScore = (event) => {
-    const scoreArr = [...this.state.scoreArr, this.state.playerScore]
-    console.log(scoreArr)
-    this.setState({ scoreArr })
-    // console.log(this.state.playerScore)
-    this.setState({ playerScore: ''}) 
+  handleInputChange = (event) => {
+    const {name, value} = event.target;
+    this.setState({[name]: value});
   }
+
+  showScores = () => {
+    if(!this.state.remaningPins.length) {
+      return this.state.initialPins.map(number => {
+        return (
+            <button 
+            className="score-btn" 
+            onClick={this.addScore}
+            value={number}>{number}</button>
+        )
+      })  
+    } 
+
+   return this.state.remaningPins.map(number => {
+        return (
+            <button 
+            className="score-btn" 
+            onClick={this.addScore}
+            value={number}>{number}</button>
+        )
+      })
+
+  }
+
+  addScore = (event) => { 
+    event.preventDefault();
+    const {value} = event.target;
+    const scoreArr = [...this.state.scoreArr, value];
+    const arrLength = this.state.scoreArr.length;
+
+    if(arrLength < 20){
+      arrLength % 2 === 0 
+      ? this.completeTurn(event)
+      : this.setState({ scoreArr, remaningPins: [] });
+    }
+  }
+
+  completeTurn = (event) => {
+    const {value} = event.target;
+    const scoreArr = [...this.state.scoreArr, value];
+    const arrLength = this.state.scoreArr.length;
+    this.setState({ scoreArr, remaningPins: this.state.scoreObj[value] })
+    //if {
+        //setState({[...scorArr, 0], remaningPins: [] })
+      //}
+  }
+
 
   render() {
     return (
       <div className="bowling-area">
+
+          <div className="button-container">
+            {this.showScores()}
+          </div>
+
         <ScoreBoard 
-          name={this.state.playerName}
           scoreArray={this.state.scoreArr}
         />
-        <div className="bowling-score-area">
-          <div className="input-and-btn-area">
-            <input 
-              className="player-inputs"
-              placeholder="Enter Player Name"
-              value={this.state.playerName}
-              onChange={this.handleInput}
-              maxLength={8}
-            />
-            <input 
-              className="player-inputs"
-              placeholder="Roll Away!!"
-              value={this.state.playerScore}
-              onChange={this.handleScore}
-              maxLength={2}
-            />
-            <button onClick={this.addScore}>
-              Submit Score
-            </button>
-            
-          </div>
-        </div>
       </div>
     )
   }
