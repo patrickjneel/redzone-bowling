@@ -30,7 +30,8 @@ class BowlingArea extends Component {
     if(!this.state.remaningPins.length) {
       return this.state.initialPins.map(number => {
         return (
-            <button 
+            <button
+            key={number}
             className="score-btn" 
             onClick={this.addScore}
             value={number}>{number}</button>
@@ -40,7 +41,8 @@ class BowlingArea extends Component {
 
    return this.state.remaningPins.map(number => {
         return (
-          <button 
+          <button
+            key={number}
             className="score-btn" 
             onClick={this.addScore}
             value={number}>{number}
