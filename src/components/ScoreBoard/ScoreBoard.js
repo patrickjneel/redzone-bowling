@@ -2,19 +2,15 @@ import React from "react";
 import "./score-board.css";
 
 const ScoreBoard = ({ scoreArray, frameTotal }) => {
-  let finalScore;
+  let frameScore = 0;
 
-  if(!scoreArray.length) {
-    <td className="player-total">0</td>;
-  } else {
+  if(scoreArray.length) {
     if(scoreArray.length % 2 === 0) {
-      finalScore = scoreArray.reduce((a,b) => parseInt(a) + parseInt(b));
-      frameTotal.push(finalScore)
+      let frameScore = scoreArray.reduce((a,b) => parseInt(a) + parseInt(b));
+      frameTotal.push(frameScore)
     }
-      console.log(frameTotal)
-      console.log(finalScore)
   }
-
+ 
   return (
     <div className="score-board-area">
       <table className="score-board">
