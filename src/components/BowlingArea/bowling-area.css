@@ -40,8 +40,13 @@ button {
   width: 110px;
 }
 
-.rules {
-  font-size: 24px;
-  font-weight: 700;
-  margin: auto;
+.button-container {
+  display: flex;
+  flex-direction: row; 
+}
+
+.score-btn {
+  height: 30px;
+  widows: 30px;
+  border-radius: 0px;
 }

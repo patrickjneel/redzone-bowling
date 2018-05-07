@@ -1,7 +1,7 @@
 import React from 'react';
 import './score-board.css';
 
-const ScoreBoard = ({ name, scoreArray }) => {
+const ScoreBoard = ({ scoreArray }) => {
 
     let finalScore;
     if(!scoreArray.length){
@@ -9,6 +9,8 @@ const ScoreBoard = ({ name, scoreArray }) => {
     } else {
         finalScore = scoreArray.reduce((a,b) => parseInt(a) + parseInt(b));
     }
+
+    const variable = 'jo'
 
   return (
     <div className="score-board-area">
@@ -29,9 +31,9 @@ const ScoreBoard = ({ name, scoreArray }) => {
             <th className="totals">Total Score</th>
           </tr>
           <tr>
-            <td className="player-name">{name}</td>
+            <td className="player-name" contentEditable>Type Your Name</td>
             <td className="player-score">
-             <span className="frame-score">{scoreArray[0]}</span>
+             <span className={`frame-score ${variable}`}>{scoreArray[0]}</span>
              <span className="frame-score">{scoreArray[1]}</span>
             </td>
             <td className="player-score">

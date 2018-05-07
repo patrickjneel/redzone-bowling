@@ -6,23 +6,21 @@ class BowlingArea extends Component {
   constructor() {
     super()
     this.state = {
-      initialPins: 11,
-      remaningPins: 10,
-      playerName: '',
-      playerScore: '',
+      initialPins: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 
+      remaningPins: [],
       scoreArr: [],
       scoreObj: {
-        10: 0,
-        9: [0, 1]
-        8: 2,
-        7: 3,
-        6: 4,
-        5: 5,
-        4: 6,
-        3: 7,
-        2: 8,
-        1: 9,
-        0: 10 
+        10: [0],
+        9: [0, 1],
+        8: [0, 1, 2],
+        7: [0, 1, 2, 3],
+        6: [0, 1, 2, 3, 4],
+        5: [0, 1, 2, 3, 4, 5],
+        4: [0, 1, 2, 3, 4, 5, 6],
+        3: [0, 1, 2, 3, 4, 5, 6, 7],
+        2: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+        1: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+        0: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 
       }
     }
   }
@@ -32,78 +30,64 @@ class BowlingArea extends Component {
     this.setState({[name]: value});
   }
 
-  addScore = (event) => {  
-    if(this.state.scoreArr.length < 20){
+  showScores = () => {
+    if(!this.state.remaningPins.length) {
+      return this.state.initialPins.map(number => {
+        return (
+            <button 
+            className="score-btn" 
+            onClick={this.addScore}
+            value={number}>{number}</button>
+        )
+      })  
+    } 
 
-      if(this.state.scoreArr.length % 2 === 0) {
-        const randomNum = Math.floor(Math.random() * Math.floor(this.state.initialPins))
-        const scoreArr = [...this.state.scoreArr, randomNum];
-        this.setState({ remaningPins: randomNum, scoreArr })
-          console.log(scoreArr)
-      }
+   return this.state.remaningPins.map(number => {
+        return (
+            <button 
+            className="score-btn" 
+            onClick={this.addScore}
+            value={number}>{number}</button>
+        )
+      })
 
-      if(this.state.scoreArr.length % 2 !== 0) {
-        const remaningTest = Math.floor(Math.random() * Math.floor(this.state.scoreObj[this.state.remaningPins]));
-
-
-        const scoreArr = [...this.state.scoreArr, remaningTest];
-        this.setState({ scoreArr });
-          console.log(scoreArr)
-      }
-
-        
-
-
-
-      // const scoreArr = [...this.state.scoreArr, this.state.playerScore];
-      // this.setState({ scoreArr });
-      // this.setState({ playerScore: ''});
-    }
-    event.preventDefault();
   }
 
+  addScore = (event) => { 
+    event.preventDefault();
+    const {value} = event.target;
+    const scoreArr = [...this.state.scoreArr, value];
+    const arrLength = this.state.scoreArr.length;
+
+    if(arrLength < 20){
+      arrLength % 2 === 0 
+      ? this.completeTurn(event)
+      : this.setState({ scoreArr, remaningPins: [] });
+    }
+  }
+
+  completeTurn = (event) => {
+    const {value} = event.target;
+    const scoreArr = [...this.state.scoreArr, value];
+    const arrLength = this.state.scoreArr.length;
+    this.setState({ scoreArr, remaningPins: this.state.scoreObj[value] })
+    //if {
+        //setState({[...scorArr, 0], remaningPins: [] })
+      //}
+  }
+
+
   render() {
-    console.log(this.state.scoreArr)
     return (
       <div className="bowling-area">
+
+          <div className="button-container">
+            {this.showScores()}
+          </div>
+
         <ScoreBoard 
-          name={this.state.playerName}
           scoreArray={this.state.scoreArr}
         />
-       
-        <div className="bowling-score-area">
-        <div className="rules">
-          Enter a Number 0-10 button is disabled if a number over 10 input or less than 0
-          </div>
-          <form className="input-and-btn-area">
-            <input 
-              className="player-inputs"
-              placeholder="Enter Player Name"
-              value={this.state.playerName}
-              onChange={this.handleInputChange}
-              maxLength={8}
-              name="playerName"
-            />
-            <input 
-              className="player-inputs"
-              placeholder="Roll Away!!"
-              value={this.state.playerScore}
-              onChange={this.handleInputChange}
-              maxLength={2}
-              name="playerScore"
-            />
-            <button 
-              onClick={this.addScore}
-              // disabled={
-              //   this.state.playerScore > 10 || 
-              //   this.state.playerScore < 0 ||
-              //   this.state.playerScore === '' 
-              // }
-            >
-              Submit Score
-            </button>
-          </form>
-        </div>
       </div>
     )
   }
