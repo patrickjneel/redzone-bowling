@@ -12,3 +12,7 @@
 
     ```npm start```
 
+4. Run Test suite
+    
+    ```npm test```
+
