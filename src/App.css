@@ -2,7 +2,6 @@
   text-align: center;
 }
 
-
 .App-header {
   align-items: center;
   background-color: #120f23;
@@ -14,7 +13,7 @@
 }
 
 .App-title {
-  color: white;
+  color: #cfcce6;
   font-family: 'Roboto', sans-serif;;
   font-size: 63px;
   margin: unset;
