@@ -1,16 +1,16 @@
-import React from 'react';
-import './score-board.css';
+import React from "react";
+import "./score-board.css";
 
 const ScoreBoard = ({ scoreArray }) => {
 
-    let finalScore;
-    if(!scoreArray.length){
-       <td className="player-total">0</td>
-    } else {
-        finalScore = scoreArray.reduce((a,b) => parseInt(a) + parseInt(b));
-    }
+  let finalScore;
+  if(!scoreArray.length) {
+    <td className="player-total">0</td>;
+  } else {
+    finalScore = scoreArray.reduce((a,b) => parseInt(a) + parseInt(b));
+  }
 
-    const variable = 'jo'
+  const variable = "jo"; //filter for 10 and zeros goes here
 
   return (
     <div className="score-board-area">
@@ -31,54 +31,54 @@ const ScoreBoard = ({ scoreArray }) => {
             <th className="totals">Total Score</th>
           </tr>
           <tr>
-            <td className="player-name" contentEditable>Type Your Name</td>
+            <td className="player-name" contentEditable>Enter Name</td>
             <td className="player-score">
-             <span className={`frame-score ${variable}`}>{scoreArray[0]}</span>
-             <span className="frame-score">{scoreArray[1]}</span>
+              <span className={`frame-score ${variable}`}>{scoreArray[0]}</span>
+              <span className="frame-score">{scoreArray[1]}</span>
             </td>
             <td className="player-score">
-             <span className="frame-score">{scoreArray[2]}</span>
-             <span className="frame-score">{scoreArray[3]}</span>
+              <span className="frame-score">{scoreArray[2]}</span>
+              <span className="frame-score">{scoreArray[3]}</span>
             </td>
             <td className="player-score">
-             <span className="frame-score">{scoreArray[4]}</span>
-             <span className="frame-score">{scoreArray[5]}</span>
+              <span className="frame-score">{scoreArray[4]}</span>
+              <span className="frame-score">{scoreArray[5]}</span>
             </td>
             <td className="player-score">
-             <span className="frame-score">{scoreArray[6]}</span>
-             <span className="frame-score">{scoreArray[7]}</span>
+              <span className="frame-score">{scoreArray[6]}</span>
+              <span className="frame-score">{scoreArray[7]}</span>
             </td>
             <td className="player-score">
-             <span className="frame-score">{scoreArray[8]}</span>
-             <span className="frame-score">{scoreArray[9]}</span>
+              <span className="frame-score">{scoreArray[8]}</span>
+              <span className="frame-score">{scoreArray[9]}</span>
             </td>
             <td className="player-score">
-             <span className="frame-score">{scoreArray[10]}</span>
-             <span className="frame-score">{scoreArray[11]}</span>
+              <span className="frame-score">{scoreArray[10]}</span>
+              <span className="frame-score">{scoreArray[11]}</span>
             </td>
             <td className="player-score">
-             <span className="frame-score">{scoreArray[12]}</span>
-             <span className="frame-score">{scoreArray[13]}</span>
+              <span className="frame-score">{scoreArray[12]}</span>
+              <span className="frame-score">{scoreArray[13]}</span>
             </td>
             <td className="player-score">
-             <span className="frame-score">{scoreArray[14]}</span>
-             <span className="frame-score">{scoreArray[15]}</span>
+              <span className="frame-score">{scoreArray[14]}</span>
+              <span className="frame-score">{scoreArray[15]}</span>
             </td>
             <td className="player-score">
-             <span className="frame-score">{scoreArray[16]}</span>
-             <span className="frame-score">{scoreArray[17]}</span>
+              <span className="frame-score">{scoreArray[16]}</span>
+              <span className="frame-score">{scoreArray[17]}</span>
             </td>
             <td className="player-score">
-             <span className="frame-score">{scoreArray[18]}</span>
-             <span className="frame-score">{scoreArray[19]}</span>
-             <span className="frame-score">{scoreArray[20]}</span>
+              <span className="frame-score">{scoreArray[18]}</span>
+              <span className="frame-score">{scoreArray[19]}</span>
+              <span className="frame-score">{scoreArray[20]}</span>
             </td>
             <td className="player-total">{finalScore}</td>
           </tr>
         </tbody>
       </table>
     </div>
-  )
-}
+  );
+};
 
 export default ScoreBoard;

@@ -2,10 +2,9 @@
   text-align: center;
 }
 
-
 .App-header {
   align-items: center;
-  background-color: #222;
+  background-color: #120f23;
   display: flex;
   height: 124px;
   justify-content: center;
@@ -14,14 +13,18 @@
 }
 
 .App-title {
-  color: white;
+  color: #cfcce6;
   font-family: 'Roboto', sans-serif;;
-  font-size: 50px;
+  font-size: 63px;
   margin: unset;
-  padding-top: 7px;
+  padding-top: 9px;
 }
 
 .logo-img {
   width: 385px;
+}
+
+.bowling-img {
+  width: 100vw;
 }
 

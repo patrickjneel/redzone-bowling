@@ -10,7 +10,8 @@
   border: 5px solid #d13239;
   box-shadow: 0px 1px 1px 1px #c5c5c5;
   height: 125px;
-  margin-top: 25px;
+  margin: 30px 0px;
+  padding: 15px 0px;
   width: 100%;
 }
 
@@ -32,7 +33,6 @@
 
 .frames {
   background-color: #9abced;
-  border-radius: 25px;
   font-weight: 800;
   height: 45px;
   padding: 3px;

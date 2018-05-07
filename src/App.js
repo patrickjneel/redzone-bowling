@@ -10,6 +10,7 @@ class App extends Component {
           <img className="logo-img" src={require('./redzone.png')} alt="redzone-logo"/>
           <h1 className="App-title">BOWLING</h1>
         </header>
+        <img className="bowling-img" src={require('./bowl.jpg')} />
         <BowlingArea />
       </div>
     );
