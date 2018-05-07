@@ -29,7 +29,7 @@ const ScoreBoard = ({ scoreArray, frameTotal }) => {
             <th className="frames">10</th>
           </tr>
           <tr>
-            <td className="player-name">Enter Name</td>
+            <td className="player-name" contenteditable="true">Enter Name</td>
             <td className="player-score">
               <div className="score-top">
                 <span className="frame-score">{scoreArray[0]}</span>
