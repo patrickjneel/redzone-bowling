@@ -29,7 +29,7 @@ it('should have a default state', () => {
   };
 
   expect(renderedBowlingArea.state('initialPins')).toEqual(expectedInitialPins);
-  expect(renderedBowlingArea.state('remaningPins')).toEqual(expectedRemainingPins);
+  expect(renderedBowlingArea.state('remainingPins')).toEqual(expectedRemainingPins);
   expect(renderedBowlingArea.state('scoreArr')).toEqual(expectedScoreArr);
   expect(renderedBowlingArea.state('frameTotal')).toEqual(expectedFrameTotal);
   expect(renderedBowlingArea.state('scoreObj')).toEqual(expectedScoreObj);

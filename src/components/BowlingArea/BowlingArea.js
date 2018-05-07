@@ -7,7 +7,7 @@ class BowlingArea extends Component {
     super()
     this.state = {
       initialPins: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 
-      remaningPins: [],
+      remainingPins: [],
       scoreArr: [],
       frameTotal: [],
       scoreObj: {
@@ -27,7 +27,7 @@ class BowlingArea extends Component {
   }
 
   showScores = () => {
-    if(!this.state.remaningPins.length) {
+    if(!this.state.remainingPins.length) {
       return this.state.initialPins.map(number => {
         return (
             <button
@@ -39,7 +39,7 @@ class BowlingArea extends Component {
       })  
     } 
 
-   return this.state.remaningPins.map(number => {
+   return this.state.remainingPins.map(number => {
         return (
           <button
             key={number}
@@ -60,8 +60,8 @@ class BowlingArea extends Component {
 
     if(arrLength < 20){
       arrLength % 2 === 0 
-      ? this.setState({ scoreArr, remaningPins: this.state.scoreObj[value] })
-      : this.setState({ scoreArr, remaningPins: [] });
+      ? this.setState({ scoreArr, remainingPins: this.state.scoreObj[value] })
+      : this.setState({ scoreArr, remainingPins: [] });
     }
   }
 
