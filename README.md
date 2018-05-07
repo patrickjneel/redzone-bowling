@@ -16,3 +16,5 @@
     
     ```npm test```
 
+![screenshot](./src/assets/screenshot.jpg)
+
