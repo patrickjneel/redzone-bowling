@@ -25,11 +25,6 @@ class BowlingArea extends Component {
     }
   }
 
-  handleInputChange = (event) => {
-    const {name, value} = event.target;
-    this.setState({[name]: value});
-  }
-
   showScores = () => {
     if(!this.state.remaningPins.length) {
       return this.state.initialPins.map(number => {

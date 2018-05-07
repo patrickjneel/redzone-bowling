@@ -9,17 +9,18 @@
 
 .button-container {
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
+  margin-top: 45px; 
 }
 
 .score-btn {
+  border-radius: 25px;
   color: white;
+  cursor: pointer;
   font-size: 17px;
   height: 50px;
   width: 50px;
   border: none;
   margin: 5px;
-  border-radius: 0px;
-  margin-top: 40px;
   background: #c5646a;
 }
