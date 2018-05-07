@@ -16,5 +16,5 @@
     
     ```npm test```
 
-![screenshot](./src/assets/screenshot.jpg)
+![screenshot](./screenshot.jpg)
 
