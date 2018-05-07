@@ -9,6 +9,7 @@ class BowlingArea extends Component {
       initialPins: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 
       remaningPins: [],
       scoreArr: [],
+      frameTotal: [],
       scoreObj: {
         10: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
         9: [0, 1],
@@ -57,19 +58,9 @@ class BowlingArea extends Component {
 
     if(arrLength < 20){
       arrLength % 2 === 0 
-      ? this.completeTurn(event)
+      ? this.setState({ scoreArr, remaningPins: this.state.scoreObj[value] })
       : this.setState({ scoreArr, remaningPins: [] });
     }
-  }
-
-  completeTurn = (event) => {
-    const {value} = event.target;
-    const scoreArr = [...this.state.scoreArr, value];
-    const arrLength = this.state.scoreArr.length;
-    this.setState({ scoreArr, remaningPins: this.state.scoreObj[value] })
-    //if {
-        //setState({[...scorArr, 0], remaningPins: [] })
-      //}
   }
 
   gameOver = () => {
@@ -93,6 +84,7 @@ class BowlingArea extends Component {
         {this.gameOver()}
         <ScoreBoard 
           scoreArray={this.state.scoreArr}
+          frameTotal={this.state.frameTotal}
         />
       </div>
     );
